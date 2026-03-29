@@ -1,0 +1,713 @@
+:root {
+  /* --- 1. FONDO PRINCIPAL --- */
+  --bg-dark-base: #070D18; 
+  /* --- 2. SUPERFICIES Y CARDS --- */
+  --bg-card: #1E293B; 
+  --bg-card-hover: #192435; 
+  --bg-badge: #141F38;
+  /* --- 3. BORDES Y SEPARADORES --- */
+  --border-cyan-subtle: #07192C; 
+  --border-gray-subtle: #232B37; 
+  /* --- 4. TEXTOS --- */
+  --text-white: #FFFFFF;
+  --text-gray-subtle: #94A3B8;
+  /* --- 5. ACENTOS Y BOTONES --- */
+  --accent-cyan: #22D3EE; 
+  --accent-cyan-light: #6DDDFF; 
+  /* --- 6. EFECTOS DE GLOW --- */
+  --glow-cyan: #305F74; 
+  --glow-purple: #C7CFFF; 
+
+  /* TIPOGRAFÍAS */
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
+
+  /* DESIGN TOKENS */
+  --radius-card: 16px;
+  --radius-button: 100px;
+  --sidebar-width: 72px;
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100dvh;
+  background-color: var(--bg-dark-base);
+  color: var(--text-white);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+/* 3. JERARQUÍA TIPOGRÁFICA */
+h1, .h1, h2, .h2, h3, .h3 { 
+  font-family: var(--font-jakarta); 
+  color: var(--text-white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1, .h1 { font-weight: 800; }
+h2, .h2 { font-weight: 700; }
+h3, .h3 { font-weight: 600; }
+
+p, span, div { font-family: var(--font-inter); }
+
+.font-space, .badge, .pill, .label-caps, .nav-item {
+  font-family: var(--font-space) !important;
+}
+
+.text-cyan { color: var(--accent-cyan); }
+.text-subtle { color: var(--text-gray-subtle); }
+
+.label-caps {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+/* 4. COMPONENTES DE ESTRUCTURA */
+.main-container {
+  margin-left: var(--sidebar-width);
+  padding: 0 60px;
+  min-height: 100vh;
+  transition: var(--transition-base);
+}
+
+/* --- HOME SECTION --- */
+.home-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 24px 0;
+  align-items: center;
+}
+
+.hero-section {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  padding: 80px 0;
+  min-height: calc(100vh - 100px);
+}
+
+.hero-content { flex: 1.2; }
+.hero-title { font-size: clamp(32px, 5vw, 48px); color: var(--accent-cyan); margin-top: 32px; }
+.hero-subtitle { font-size: clamp(24px, 4vw, 32px); margin-bottom: 40px; }
+.hero-description { font-size: 18px; line-height: 1.6; max-width: 580px; margin-bottom: 48px; }
+
+.metrics-grid { display: flex; gap: 60px; }
+.metric-value { font-size: 40px; color: var(--text-white); margin: 0; }
+
+.hero-visual { flex: 0.8; position: relative; width: 100%; }
+.glow-effect {
+  position: absolute; width: 120%; height: 120%; top: -10%; left: -10%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
+  z-index: -1;
+}
+.profile-card {
+  position: relative; 
+  border-radius: var(--radius-card); 
+  border: 1px solid var(--accent-cyan);
+  overflow: hidden; 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.profile-card::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Altura del degradado (ajusta al gusto) */
+  
+  /* DEGRADADO: De transparente a tu color de fondo principal */
+  background: linear-gradient(
+    to top, 
+    var(--bg-card-hover) 0%, 
+    transparent 100%
+  );
+  
+  z-index: 3; /* Por encima de la foto y del overlay de color */
+  pointer-events: none; /* Para que no bloquee clics */
+}
+.profile-photo { width: 100%; display: block; filter: grayscale(20%); }
+.stack-pills { position: absolute; bottom: 20px; left: 20px; display: flex; gap: 10px;z-index: 4; }
+
+/* --- PROJECTS: BENTO GRID DEFINITIVO (7/5 - 5/7) --- */
+.projects-page-wrapper { padding: 80px 0; max-width: 1400px; margin: 0 auto; }
+.projects-header { margin-bottom: 60px; }
+.bento-grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+.btn-website{
+  background-color: var(--bg-dark-base);
+  border: 1px solid var(--accent-cyan);
+  padding: 8px 16px;
+  width: fit-content;
+  border-radius: var(--radius-button);
+  color: var(--accent-cyan-light);
+  transition: all 0.3s ease;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+.btn-website:hover{
+  background-color: var(--accent-cyan);
+  color: var(--bg-dark-base);
+}
+.btn-prototype{
+  background-color: var(--border-gray-subtle);
+  border: 1px solid var(--text-gray-subtle);
+  padding: 8px 16px;
+  width: fit-content;
+  border-radius: var(--radius-button);
+  color: var(--text-white);
+  transition: all 0.3s ease;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+.bento-card-wrapper {
+  height: 480px;
+  grid-column: span 12; /* Default Mobile */
+}
+
+/* Clases de Span para Escritorio */
+@media (min-width: 1025px) {
+  .bento-card-wrapper.span-7 { grid-column: span 7; }
+  .bento-card-wrapper.span-5 { grid-column: span 5; }
+}
+
+.project-card-anchor {
+  height: 100%; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 40px; text-decoration: none; border-radius: var(--radius-card);
+  border: 1px solid var(--border-gray-subtle); background-size: cover; background-position: center;
+  transition: var(--transition-base); overflow: hidden;
+}
+
+.project-card-anchor:hover { transform: translateY(-8px); border-color: var(--accent-cyan); }
+.project-card-title { font-size: 32px; margin: 12px 0; }
+.project-tags-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* --- ABOUT & TIMELINE --- */
+.about-container { padding: 80px 0; }
+.about-title { font-size: clamp(40px, 7vw, 72px); margin-top: 32px; }
+.about-description { font-size: 20px; max-width: 850px; margin-top: 40px; margin-bottom: 100px; }
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 140px;
+}
+.philo-card { padding: 24px; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-gray-subtle); }
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-top: 1px solid var(--border-gray-subtle);
+}
+
+/* --- MEDIA QUERIES (RESPONSIVE TOTAL) --- */
+@media (max-width: 1024px) {
+  .main-container { padding: 0 30px; }
+  .philosophy-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .main-container { margin-left: 0; padding: 0 20px 100px 20px; }
+  
+  /* Hero Mobile */
+  .hero-section { flex-direction: column; text-align: center; gap: 40px; padding: 40px 0; }
+  .hero-visual { order: -1; max-width: 320px; margin: 0 auto; }
+  .hero-description { margin: 0 auto 40px auto; }
+  .metrics-grid { justify-content: center; gap: 40px; }
+
+  /* Bento Mobile (Forzamos Columna) */
+  .bento-grid-container { display: flex; flex-direction: column; gap: 20px; }
+  .bento-card-wrapper { height: 380px !important; width: 100%; }
+  .bento-card-wrapper.span-7, .bento-card-wrapper.span-5 { grid-column: span 12 !important; }
+  .project-card-anchor { padding: 24px; }
+  .project-card-title { font-size: 24px !important; }
+
+  /* Timeline Mobile */
+  .philosophy-grid { grid-template-columns: 1fr; }
+  .timeline-row { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* --- ELEMENTOS DE INTERFAZ --- */
+.badge { background-color: var(--bg-badge); padding: 6px 16px; border-radius: 24px; color: var(--accent-cyan); display: inline-flex; align-items: center; }
+.pill { font-size: 10px; color: var(--accent-cyan); background-color: var(--bg-card); padding: 4px 12px; border-radius: 100px; border: 1px solid var(--accent-cyan); text-transform: uppercase; }
+.btn-primary { font-size: 12px; font-weight: 600; color: var(--text-white); background-color: var(--bg-card); border: 1px solid var(--accent-cyan); border-radius: 100px; padding: 10px 24px; cursor: pointer; transition: var(--transition-base); text-transform: uppercase; letter-spacing: 1px; }
+
+.contact-bento-grid{
+  display: flex;
+  flex-shrink: 1;
+  flex-basis: 300px;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 40px;
+  .contact-card-bento{
+    width: 100%;
+    border: 1px solid white;
+    padding: 16px;
+    height: 170px;
+    color: var(--text-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 24px;
+  }
+}
+
+/* --- SIDEBAR ESTRUCTURA BASE --- */
+.sidebar {
+    position: fixed;
+    left: 8px;
+    top: 50%;
+    width: var(--sidebar-width);
+    height: fit-content;
+    background-color: #141f38;
+    border-right: 1px solid var(--border-gray-subtle);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    z-index: 1000;
+    border-radius: 100px;
+    translate: 0 -50%;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* --- NAV ITEMS --- */
+.nav-item {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-gray-subtle);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: var(--transition-base);
+  position: relative;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: var(--accent-cyan);
+  background-color: var(--bg-badge);
+}
+
+/* --- TOOLTIP DESKTOP --- */
+.tooltip-desktop {
+  position: absolute;
+  left: 55px;
+  background: var(--bg-card);
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  font-size: 11px;
+  color: var(--accent-cyan);
+  border: 1px solid var(--border-cyan-subtle);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* --- LABELS (OCULTOS EN DESKTOP) --- */
+.mobile-label {
+  display: none;
+}
+.project-actions{
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+/* style={{ display: 'flex', flexDirection: 'row', gap: '12px', marginBottom: '40px' }} */
+
+/* --- RESPONSIVE: MOBILE NAV TAB (ANCLADO ABAJO) --- */
+@media (max-width: 768px) {
+  .contact-bento-grid{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 40px;
+}
+  .sidebar {
+    width: 100% !important;
+    height: 75px !important; /* Altura fija para la barra */
+    position: fixed !important;
+    /*bottom: 0 !important;  Anclado al fondo */
+    left: 0 !important;
+    top: 96vh !important; /* Cancelamos el top: 0 de desktop */
+    border-right: none !important;
+    border-top: 1px solid var(--border-gray-subtle) !important;
+    padding: 0 !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    background: rgba(7, 13, 24, 0.98) !important; /* Casi opaco para legibilidad */
+    backdrop-filter: blur(12px);
+    z-index: 9999 !important; /* Por encima de todo el contenido */
+  }
+
+  .sidebar ul {
+    flex-direction: row !important;
+    width: 100% !important;
+    height: 100% !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    padding: 0 10px !important;
+    gap: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nav-item {
+    flex-direction: column !important;
+    width: 65px !important;
+    height: 100% !important;
+    gap: 4px !important;
+    justify-content: center !important;
+    background: none !important;
+  }
+
+  .mobile-label {
+    display: block !important;
+    font-size: 10px !important;
+    letter-spacing: 0.5px !important;
+    font-weight: 500 !important;
+  }
+
+  /* Ajuste para el contenedor principal para que no se tape el contenido */
+  .main-container {
+    margin-left: 0 !important;
+    padding-bottom: 90px !important; /* Espacio para que la barra no tape el texto final */
+  }
+  .education-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+}
+.skills-pills-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.education-grid{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+.certs-list li{
+  margin-bottom: 8px;
+}
+/* --- CONTENEDOR DE GALERÍA BENTO (12 COLUMNAS) --- */
+.project-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  padding: 80px 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-gray-subtle);
+  background: var(--bg-card);
+  transition: var(--transition-base);
+  cursor: zoom-in;
+}
+
+.gallery-item:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.gallery-img-obj {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- CLASES DE CONTROL DE SPAN (BENTO LOGIC) --- */
+
+/* Ocupa las 12 columnas (Ancho total) */
+.gallery-item.full { 
+  grid-column: span 12; 
+  height: 600px; 
+}
+
+/* LA NUEVA: Ocupa 6 columnas (50% del ancho) */
+.gallery-item.medium { 
+  grid-column: span 6; 
+  height: 450px; 
+}
+
+/* Ocupa 8 columnas (Ideal para Desktop principal) */
+.gallery-item.desktop { 
+  grid-column: span 8; 
+  height: 450px; 
+}
+
+/* Ocupa 4 columnas (Ideal para capturas mobile o detalles) */
+.gallery-item.mobile { 
+  grid-column: span 4; 
+  height: 450px; 
+}
+
+/* --- RESPONSIVE: TODO A UNA COLUMNA --- */
+@media (max-width: 1024px) {
+  /* En tablets ya empezamos a simplificar si es necesario, 
+     pero mantendremos el grid hasta los 768px */
+  .gallery-item.desktop, 
+  .gallery-item.mobile,
+  .gallery-item.medium { 
+    grid-column: span 6; /* En tablet pequeñas, landscape y portrait se nivelan */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-gallery-grid {
+    display: flex; /* Cambiamos a flex para forzar la columna vertical */
+    flex-direction: column;
+    gap: 16px;
+    padding: 40px 20px;
+  }
+
+  .gallery-item {
+    grid-column: span 12 !important; /* Force span */
+    width: 100%;
+    height: auto !important; /* Que la imagen mande el alto en mobile */
+    min-height: 300px;
+  }
+  
+  .gallery-img-obj {
+    object-fit: contain; /* Para que en mobile se vea la captura completa sin cortes */
+    background: #000;
+  }
+  .back-link-inline {
+    position: absolute;
+    top: 40px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-subtle);
+    transition: 0.3s;
+    z-index: 10;
+  }
+}
+
+/* --- HERO ADJUSTMENTS --- */
+.project-detail-page{
+  position: relative;
+}
+.project-hero {
+  height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background: #050505;
+  border-radius: 0 0 40px 40px;
+    overflow: hidden;
+}
+.hero-img-bg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-content-detail{
+  position: absolute;
+  bottom: 16px;
+  left: 32px;
+}
+.sticky-back-container {
+  position: fixed;
+  top: 30px; /* Distancia desde el borde superior de la pantalla */
+  left: 30px;
+  z-index: 1000; /* Asegúrate de que esté por encima del Hero */
+  width: fit-content;
+  pointer-events: none; /* Permite que el scroll pase a través del contenedor si es necesario */
+  a{
+    pointer-events: auto; /* Reactiva los clics solo en el botón */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #07192C;
+    border: 1px solid var(--accent-cyan-light);
+    padding: 8px 24px; /* Un poco más de padding para que se vea Pro */
+    border-radius: 100px;
+    text-decoration: none;
+    backdrop-filter: blur(8px); /* Efecto glassmorphism como en tu referencia */
+  }
+}
+
+.back-link-inline {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-subtle);
+  transition: 0.3s;
+  z-index: 10;
+  width: max-content;
+}
+
+.back-link-inline:hover { color: var(--accent-cyan); }
+
+.h1-display {
+  font-size: clamp(48px, 8vw, 120px);
+  font-weight: 800;
+  line-height: 0.9;
+  margin-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+}
+
+/* --- INFO GRID ESTRUCTURA --- */
+.detail-info-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr; /* Relación de aspecto de tu imagen */
+  gap: 100px;
+  padding: 100px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.info-block { margin-bottom: 60px; }
+
+.h2-label {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-white);
+}
+
+.text-body-large {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-subtle);
+}
+
+/* --- SIDEBAR REFINEMENT --- */
+.detail-sidebar {
+  padding-top: 8px; /* Alineación visual con el primer H2 */
+}
+
+.text-cyan-subtle {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.pill-outline {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 4px;
+  color: var(--text-subtle);
+  background: rgba(255,255,255,0.03);
+}
+
+/* Responsive para que en mobile el sidebar pase abajo */
+@media (max-width: 900px) {
+  .detail-info-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 24px;
+  }
+}
+@media (max-width: 768px) {
+  .project-actions{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .btn-prototype, 
+  .btn-website{
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+  }
+}
+
+.lightbox-overlay {
+  position: fixed !important;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content-cyber {
+  position: relative;
+  max-width: 90%;
+  max-height: 85vh;
+}
+
+.lightbox-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+.nav-btn-cyber {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+  z-index: 10000;
+}
+
+.nav-btn-cyber.left { left: 20px; }
+.nav-btn-cyber.right { right: 20px; }
+
+.modal-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
