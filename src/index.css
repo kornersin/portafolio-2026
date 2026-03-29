@@ -128,11 +128,7 @@ p, span, div { font-family: var(--font-inter); }
   height: 50%; /* Altura del degradado (ajusta al gusto) */
   
   /* DEGRADADO: De transparente a tu color de fondo principal */
-  background: linear-gradient(
-    to top, 
-    var(--bg-card-hover) 0%, 
-    transparent 100%
-  );
+  background: radial-gradient (at 50% 50%, transparent, rgba(0,0,0,0.7) 100%);
   
   z-index: 3; /* Por encima de la foto y del overlay de color */
   pointer-events: none; /* Para que no bloquee clics */
