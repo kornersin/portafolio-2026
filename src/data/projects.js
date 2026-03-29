@@ -8,7 +8,7 @@ import dsArt from '../assets/projects/OmBookings/dsArt.png';
 import dsArtBack from '../assets/projects/OmBookings/dsArtBack.png';
 import dsForm from '../assets/projects/OmBookings/dsForm.png';
 
-import loveHero from '../assets/projects/Body/loveHero.png';
+import loveHero from '../assets/projects/body/loveHero.png';
 import bench from '../assets/projects/Lovelace/bench.png';
 import dashEmpty from '../assets/projects/Lovelace/dashEmpty.png';
 import dashFull from '../assets/projects/Lovelace/dashFull.png';
@@ -20,7 +20,7 @@ import route from '../assets/projects/Lovelace/route.png';
 import routeDetail from '../assets/projects/Lovelace/routeDetail.png';
 import test from '../assets/projects/Lovelace/test.png';
 
-import magazineHero from '../assets/projects/Body/magazineHero.jpg';
+import magazineHero from '../assets/projects/body/magazineHero.jpg';
 import interact from '../assets/projects/Sexthink/interact.png';
 import KPI from '../assets/projects/Sexthink/KPI.png';
 import main from '../assets/projects/Sexthink/main.png';
@@ -31,7 +31,7 @@ import protoPersonaM from '../assets/projects/Sexthink/protoPersonaM.png';
 import protoPersonaF from '../assets/projects/Sexthink/protoPersonaF.png';
 import userJourney from '../assets/projects/Sexthink/userJourney.png';
 
-import appHome from '../assets/projects/Body/appHome.png';
+import appHome from '../assets/projects/body/appHome.png';
 import addUser from '../assets/projects/Nomiya/addUser.png';
 import dashboard from '../assets/projects/Nomiya/dashboard.png';
 import dashMobile from '../assets/projects/Nomiya/dashMobile.png';
@@ -41,7 +41,7 @@ import homeFull from '../assets/projects/Nomiya/homeFull.png';
 import login from '../assets/projects/Nomiya/login.png';
 import components from '../assets/projects/Nomiya/components.png';
 
-import iztHome from '../assets/projects/Body/iztHome.jpeg';
+import iztHome from '../assets/projects/body/iztHome.jpeg';
 import banner from '../assets/projects/Iztapalapa/banner.jpeg';
 import mapas from '../assets/projects/Iztapalapa/mapas.png';
 import textos from '../assets/projects/Iztapalapa/textos.png';
@@ -49,7 +49,7 @@ import userPersonaF from '../assets/projects/Iztapalapa/userPersonaF.png';
 import userPersonaM from '../assets/projects/Iztapalapa/userPersonaM.png';
 import wireframeSite from '../assets/projects/Iztapalapa/wireframeSite.png';
 
-import taikoHome from '../assets/projects/Body/homeTaiko.jpg';
+import taikoHome from '../assets/projects/body/homeTaiko.jpg';
 import avatar from '../assets/projects/Taikonauta/avatar.png';
 import bienvenida from '../assets/projects/Taikonauta/bienvenida.png';
 import board from '../assets/projects/Taikonauta/board.png';
@@ -60,7 +60,7 @@ import modalBienvenida from '../assets/projects/Taikonauta/modalBienvenida.png';
 import registro from '../assets/projects/Taikonauta/registro.png';
 import question from '../assets/projects/Taikonauta/question.png';
 
-import Xochi from '../assets/projects/Body/Xochi.png';
+import Xochi from '../assets/projects/body/Xochi.png';
 import notaUno from '../assets/projects/Xochimilco/notaUno.png';
 import notaDos from '../assets/projects/Xochimilco/notaDos.png';
 import notaTres from '../assets/projects/Xochimilco/notaTres.png';
