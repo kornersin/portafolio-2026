@@ -343,19 +343,20 @@ p, span, div { font-family: var(--font-inter); }
 /* --- RESPONSIVE: MOBILE NAV TAB (ANCLADO ABAJO) --- */
 @media (max-width: 768px) {
   .contact-bento-grid{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 24px;
-  margin-top: 40px;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 40px;
+  }
   .sidebar {
     width: 100% !important;
     height: 75px !important; /* Altura fija para la barra */
     position: fixed !important;
     /*bottom: 0 !important;  Anclado al fondo */
     left: 0 !important;
-    top: 96vh !important; /* Cancelamos el top: 0 de desktop */
+    top: auto !important; /* Cancelamos el top: 0 de desktop */
+    bottom: 0;
     border-right: none !important;
     border-top: 1px solid var(--border-gray-subtle) !important;
     padding: 0 !important;
@@ -364,6 +365,9 @@ p, span, div { font-family: var(--font-inter); }
     background: rgba(7, 13, 24, 0.98) !important; /* Casi opaco para legibilidad */
     backdrop-filter: blur(12px);
     z-index: 9999 !important; /* Por encima de todo el contenido */
+    padding-bottom: env(safe-area-inset-bottom);
+    background-color: #030816; /* Asegúrate de que el menú tenga fondo sólido */
+    height: calc(75px + env(safe-area-inset-bottom)) !important;
   }
 
   .sidebar ul {
@@ -396,7 +400,7 @@ p, span, div { font-family: var(--font-inter); }
   /* Ajuste para el contenedor principal para que no se tape el contenido */
   .main-container {
     margin-left: 0 !important;
-    padding-bottom: 90px !important; /* Espacio para que la barra no tape el texto final */
+    padding-bottom: 75px !important; /* Espacio para que la barra no tape el texto final */
   }
   .education-grid{
     display: flex;
