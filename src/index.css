@@ -133,7 +133,7 @@ p, span, div { font-family: var(--font-inter); }
   z-index: 3; /* Por encima de la foto y del overlay de color */
   pointer-events: none; /* Para que no bloquee clics */
 }
-.profile-photo { width: 100%; display: block; filter: grayscale(20%); }
+.profile-photo { width: 100%; display: block; }
 .stack-pills { position: absolute; bottom: 20px; left: 20px; display: flex; gap: 10px;z-index: 4; }
 
 /* --- PROJECTS: BENTO GRID DEFINITIVO (7/5 - 5/7) --- */
