@@ -355,8 +355,7 @@ p, span, div { font-family: var(--font-inter); }
     position: fixed !important;
     /*bottom: 0 !important;  Anclado al fondo */
     left: 0 !important;
-    top: auto !important; /* Cancelamos el top: 0 de desktop */
-    bottom: 0;
+    top: 95dvh !important; /* Cancelamos el top: 0 de desktop */
     border-right: none !important;
     border-top: 1px solid var(--border-gray-subtle) !important;
     padding: 0 !important;

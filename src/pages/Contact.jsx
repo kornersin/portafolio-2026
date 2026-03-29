@@ -76,7 +76,7 @@ const Contact = () => {
       </div>
 
       <motion.div variants={itemVariants} className="contact-location-footer">
-        <p className="text-subtle" style={{position: 'absolute', bottom: '20px'}}>Based in Mexico City • Open to Work Globally</p>
+        <p className="text-subtle">Based in Mexico City • Open to Work Globally</p>
       </motion.div>
     </motion.div>
   );
