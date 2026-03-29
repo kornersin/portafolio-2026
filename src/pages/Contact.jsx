@@ -36,8 +36,8 @@ const Contact = () => {
             <div className="contact-info">
               <p className="method-label">LinkedIn</p>
               <span className="method-sub">Professional Network</span>
+            <ArrowUpRight size={20} style={{marginLeft: '4px'}} className="text-subtle" />
             </div>
-            <ArrowUpRight size={20} className="text-subtle" />
           </div>
         </motion.a>
 
@@ -52,8 +52,8 @@ const Contact = () => {
             <div className="contact-info">
               <p className="method-label">Email</p>
               <span className="method-sub">kornersin@gmail.com</span>
+            <ArrowUpRight size={20} style={{marginLeft: '4px'}} className="text-subtle" />
             </div>
-            <ArrowUpRight size={20} className="text-subtle" />
           </div>
         </motion.a>
 
@@ -69,8 +69,8 @@ const Contact = () => {
             <div className="contact-info">
               <p className="method-label">WhatsApp</p>
               <span className="method-sub">Direct Message</span>
+            <ArrowUpRight size={20} style={{marginLeft: '4px'}} className="text-subtle" />
             </div>
-            <ArrowUpRight size={20} className="text-subtle" />
           </div>
         </motion.a>
       </div>
