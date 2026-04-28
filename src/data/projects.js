@@ -106,7 +106,7 @@ export const projects = [
         role: 'Product Designer & Frontend',
         tags: ['Hackathon Winner', 'UX/UI Design'],
         heroImage: loveHero, // URL externa también funciona
-        challenge: 'Educational platforms often struggle to provide personalized mentorship at scale, leaving students without clear career guidance and mentors overwhelmed by administrative tasks.',
+        challenge: 'Educational platforms struggle to provide personalized mentorship at scale, resulting in unclear student progress, low engagement, and mentors overwhelmed by administrative tasks.',
         solution: 'We engineered a comprehensive mentorship dashboard and roadmap system. By centralizing progress tracking and communication, we facilitated more meaningful connections between mentors and students, improving program completion rates by 35%.',
         description: 'Lovelace is an EdTech solution focused on empowering the next generation of tech talent. The project involved designing complex data visualizations for student progress, a flexible scheduling system, and a dynamic career roadmap that adapts to each user’s learning pace.',
         timeline: 'Hackaton 2022',

@@ -35,9 +35,10 @@ const Home = () => {
           </h2>
 
           <p className="text-subtle hero-description">
-            I am a Product Designer with a <strong className="text-white">Front-End Mindset</strong>. 
-            I bridge the gap between pixel-perfect design and production-ready code, focusing on 
-            highly interactive interfaces.
+            <strong className="text-white">UX/UI Designer</strong> with a <strong className="text-white">Front-End Mindset</strong>. I design clear, functional, and frictionless products ready to build.
+          </p>
+          <p className="text-subtle hero-description">
+            Experience in different sectors, adapting design solutions and collaborating directly with development to bring products to production.
           </p>
 
           {/* MÉTRICAS DE IMPACTO */}
