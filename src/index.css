@@ -500,7 +500,7 @@ p, span, div { font-family: var(--font-inter); }
     grid-column: span 12 !important; /* Force span */
     width: 100%;
     height: auto !important; /* Que la imagen mande el alto en mobile */
-    min-height: 300px;
+    /* min-height: 300px; */
   }
   
   .gallery-img-obj {
