@@ -21,7 +21,7 @@ const About = () => {
           Bridging the gap between <span className="text-cyan">Design</span> & <span className="text-purple-glow">Code.</span>
         </h1>
         <p className="text-subtle about-description">
-          I am Carlos, a <strong className="text-white">Sr. Product Designer</strong> with a heavy Front-End background. 
+          I am Carlos, a <strong className="text-white">Product Designer</strong> with a heavy Front-End background. 
           I specialize in creating digital products that are not only visually stunning but technically scalable and business-oriented.
         </p>
       </motion.section>
