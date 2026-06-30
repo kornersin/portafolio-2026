@@ -66,7 +66,7 @@ const About = () => {
             { 
                 role: 'UX/UI Senior', 
                 company: 'Broxel (Fintech)', 
-                period: 'Jan 2026 — Present', 
+                period: 'Jan 2026 — Apr 2026', 
                 desc: 'Optimization of legal compliance workflows by architecting a centralized digital repository. Standardized complex information architecture for T&Cs and Privacy Notices across multiple financial entities, utilizing AI-assisted development and Google Apps Script to streamline developer handoff.' 
             },
             { 
