@@ -85,7 +85,7 @@ export const projects = [
         solution: 'We developed an end-to-end ecosystem that synchronizes studio availability with user demand. By implementing a high-fidelity interface and real-time data processing, we eliminated booking conflicts and reduced user drop-off by 40%.',
         description: 'OmBookings is a specialized B2B2C platform designed to bridge the gap between wellness centers and their clients. The focus was on creating a seamless flow from class discovery to checkout, ensuring that the visual language reflects the balance and tranquility of the fitness world.',
         timeline: '3 Months',
-        category: 'Fitness / SaaS',
+        category: 'Music / SaaS',
         gallery: [
             { url: dsHero, type: 'desktop' }, 
             { url: mbHero, type: 'mobile' },
