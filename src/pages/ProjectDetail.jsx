@@ -71,15 +71,34 @@ const ProjectDetail = () => {
             <h2 className="h2-label">Description</h2>
             <p className="text-body-large">{project.description}</p>
           </div>
-
         </div>
 
         <aside className="detail-sidebar">
-          <h3 className="label-caps text-cyan">Role & Tech</h3>
-          <p className="text-white" style={{ marginTop: '16px', marginBottom: '24px' }}>
-            <strong>Role:</strong> {project.role}
-          </p>
+          <div>
+            <h3 className="label-caps text-cyan">Role & Tech</h3>
+            <p className="text-white" style={{ marginTop: '8px'}}>
+              <strong>Role:</strong> {project.role}
+            </p>
+          </div>
 
+          {/* PARÁMETROS EXTRA (Ficha Técnica) */}
+          <div>
+            <p className="label-caps text-cyan-subtle" style={{ fontSize: '10px' }}>Timeline</p>
+            <p className="text-white">{project.timeline}</p>
+          </div>
+          <div>
+            <p className="label-caps text-cyan-subtle" style={{ fontSize: '10px' }}>Industry</p>
+            <p className="text-white">{project.category}</p>
+          </div>
+          {/* <div className="project-specs" style={{ borderTop: '1px solid var(--border-cyan-subtle)', paddingTop: '24px', display: 'grid', gap: '20px' }}>
+          </div> */}
+
+          <div className="tech-pills-container">
+            <p className="label-caps text-cyan-subtle" style={{ fontSize: '10px' }}>Responsibilites</p>
+            {project.tags.map(tag => (
+              <span key={tag} className="pill-outline">{tag}</span>
+            ))}
+          </div>
           {/* CTAs DINÁMICOS */}
           <div className="project-actions">
             {project.prototypeLink && project.prototypeLink !== "https:" && (
@@ -93,24 +112,6 @@ const ProjectDetail = () => {
                 <span>Website</span>
               </a>
             )}
-          </div>
-
-          {/* PARÁMETROS EXTRA (Ficha Técnica) */}
-          <div className="project-specs" style={{ borderTop: '1px solid var(--border-cyan-subtle)', paddingTop: '24px', display: 'grid', gap: '20px' }}>
-            <div>
-              <p className="label-caps text-cyan-subtle" style={{ fontSize: '10px' }}>Timeline</p>
-              <p className="text-white">{project.timeline}</p>
-            </div>
-            <div>
-              <p className="label-caps text-cyan-subtle" style={{ fontSize: '10px' }}>Industry</p>
-              <p className="text-white">{project.category}</p>
-            </div>
-          </div>
-
-          <div className="tech-pills-container" style={{ marginTop: '32px' }}>
-            {project.tags.map(tag => (
-              <span key={tag} className="pill-outline">{tag}</span>
-            ))}
           </div>
         </aside>
       </section>

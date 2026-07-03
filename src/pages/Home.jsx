@@ -5,19 +5,7 @@ import fotoPerfil from '../assets/perfil.jpg';
 const Home = () => {
   return (
     <div className="home-container">
-      {/* BARRA SUPERIOR (Syntactic Header) */}
-      <nav className="home-nav">
-        <div className="nav-container">
-          <a 
-            href="/resume.pdf" 
-            download="resume.pdf" 
-            className="btn-primary"
-          >
-            <span>GET RESUME</span>
-          </a>
-        </div>
-      </nav>
-
+            
       {/* SECCIÓN HERO */}
       <section className="hero-section">
         
@@ -80,6 +68,61 @@ const Home = () => {
             </div>
           </div>
         </motion.div>
+      </section>
+      <section className="process-section">
+        <div className="process-header-title">
+          <div>
+          <span className="text-cyan badge font-space">
+            • How I Work
+          </span>
+          <h2 className="h2" style={{ marginTop: '16px' }}>
+            From Discovery to Delivery
+          </h2>
+          </div>
+          <div className="nav-container">
+            <a 
+              href="/resume.pdf" 
+              download="resume.pdf" 
+              className="btn-primary">
+              <span>GET RESUME</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="process-grid">
+          {/* Card 1: Research */}
+          <div className="process-card">
+            <div className="process-card-header">
+              <span className="process-number font-space">01</span>
+              <h3 className="process-title h3">Discovery & Research</h3>
+            </div>
+            <p className="text-subtle">
+              I learn about the business, user needs, and technical limits before starting the design. This helps build the right solution from the beginning.Understand business goals, user needs and technical constraints before proposing solutions.
+            </p>
+          </div>
+
+          {/* Card 2: UI & Systems */}
+          <div className="process-card">
+            <div className="process-card-header">
+              <span className="process-number font-space">02</span>
+              <h3 className="process-title h3">Product Design</h3>
+            </div>
+            <p className="text-subtle">
+              I create user flows, interfaces, and reusable components that keep the product clear, consistent, and ready for development.
+            </p>
+          </div>
+
+          {/* Card 3: Handoff */}
+          <div className="process-card">
+            <div className="process-card-header">
+              <span className="process-number font-space">03</span>
+              <h3 className="process-title h3">Handoff & Optimization</h3>
+            </div>
+            <p className="text-subtle">
+              I work closely with developers during handoff to make sure the final product matches the design and is ready for production.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );
