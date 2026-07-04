@@ -99,7 +99,7 @@ p, span, div { font-family: var(--font-inter); }
   height: 100%;
 }
 
-.hero-content { flex: 1.2; }
+.hero-content { flex: 1.2; width: 100%;}
 .hero-title { font-size: clamp(32px, 5vw, 48px); color: var(--accent-cyan); margin-top: 32px; }
 .hero-subtitle { font-size: clamp(24px, 4vw, 32px); margin-bottom: 40px; }
 .hero-description { font-size: 18px; line-height: 1.6; max-width: 580px; margin-bottom: 32px; }
