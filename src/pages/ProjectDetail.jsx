@@ -60,16 +60,20 @@ const ProjectDetail = () => {
       <section className="detail-info-grid">
         <div className="info-main">
           <div className="info-block">
-            <h2 className="h2-label">The Challenge</h2>
+            <h2 className="h2-label">Project Overview</h2>
+            <p className="text-body-large">{project.overview}</p>
+          </div>
+          <div className="info-block">
+            <h2 className="h2-label">Challenge</h2>
             <p className="text-body-large">{project.challenge}</p>
           </div>
           <div className="info-block">
-            <h2 className="h2-label">The Solution</h2>
+            <h2 className="h2-label">Solution</h2>
             <p className="text-body-large">{project.solution}</p>
           </div>
           <div className="info-block">
-            <h2 className="h2-label">Description</h2>
-            <p className="text-body-large">{project.description}</p>
+            <h2 className="h2-label">Impact</h2>
+            <p className="text-body-large">{project.impact}</p>
           </div>
         </div>
 

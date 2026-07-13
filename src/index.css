@@ -643,7 +643,7 @@ p, span, div { font-family: var(--font-inter); }
   border-radius: 100px;
   font-size: 11px;
   text-transform: uppercase;
-  margin: 0 4px;
+  margin: 2px 4px;
   color: var(--text-subtle);
   background: rgba(255,255,255,0.03);
 }
