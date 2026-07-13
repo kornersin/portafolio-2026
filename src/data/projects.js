@@ -241,7 +241,7 @@ export const projects = [
         prototypeLink: '',
         category: 'Cultural / Tourism',
         role: 'Product Designer',
-        tags: ['Geolocation', 'UI'],
+        tags: ['UX/UI Design', 'Information Architecture', 'Content Strategy', 'WordPress', 'Community Design'],
         heroImage: Xochi,
         overview: 'Mundo Xochimilco is a digital platform created to highlight the cultural heritage, local businesses, traditions, and community initiatives of Xochimilco. The project focused on building a centralized online space where residents and visitors could discover historical information, local services, cultural content, and news related to the region.',
         challenge: 'Xochimilco has a rich cultural identity shaped by its traditions, local businesses, crafts, and community activities, but much of this information was fragmented across different sources. The challenge was to create a digital platform that organized and amplified these stories, making local knowledge and experiences easier to discover.',
