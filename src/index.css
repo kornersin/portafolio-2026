@@ -189,7 +189,7 @@ p, span, div { font-family: var(--font-inter); }
   transition: var(--transition-base); overflow: hidden;
 }
 
-.project-card-anchor:hover { transform: translateY(-8px); border-color: var(--accent-cyan); }
+.project-card-anchor:hover { transform: translateY(-8px); border: 2px solid var(--accent-cyan); }
 .project-card-title { font-size: 32px; margin: 12px 0; }
 .project-tags-row { display: flex; gap: 8px; flex-wrap: wrap; }
 
@@ -244,7 +244,24 @@ p, span, div { font-family: var(--font-inter); }
 /* --- ELEMENTOS DE INTERFAZ --- */
 .badge { background-color: var(--bg-badge); padding: 6px 16px; border-radius: 24px; color: var(--accent-cyan); display: inline-flex; align-items: center; }
 .pill { font-size: 10px; color: var(--accent-cyan); background-color: var(--bg-card); padding: 4px 12px; border-radius: 100px; border: 1px solid var(--accent-cyan); text-transform: uppercase; }
-.btn-primary { font-size: 12px; font-weight: 600; color: var(--text-white); background-color: var(--bg-card); border: 1px solid var(--accent-cyan); border-radius: 100px; padding: 10px 24px; cursor: pointer; transition: var(--transition-base); text-transform: uppercase; letter-spacing: 1px; }
+.btn-primary { 
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-white);
+  background-color: var(--bg-card);
+  border: 1px solid var(--accent-cyan);
+  border-radius: 100px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-transform: uppercase; letter-spacing: 1px; 
+}
+.btn-primary:hover{
+  background-color: var(--accent-cyan);
+  color: var(--bg-dark-base);
+  transition: var(--transition-base);
+  /* transition: 0.50s linear; */
+}
 
 .contact-bento-grid{
   display: flex;
@@ -264,8 +281,10 @@ p, span, div { font-family: var(--font-inter); }
     justify-content: space-between;
     border-radius: 24px;
   }
+  .contact-card-bento:hover{
+    border: 2px solid var(--accent-cyan-light);
+  }
 }
-
 /* --- SIDEBAR ESTRUCTURA BASE --- */
 .sidebar {
     position: fixed;
@@ -299,15 +318,25 @@ p, span, div { font-family: var(--font-inter); }
   align-items: center;
   justify-content: center;
   color: var(--text-gray-subtle);
-  border-radius: 12px;
+  border-radius: 100px;
   text-decoration: none;
   transition: var(--transition-base);
   position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.nav-item:hover, .nav-item.active {
-  color: var(--accent-cyan);
-  background-color: var(--bg-badge);
+/* El estado activo se queda global para que funcione en ambos */
+.nav-item.active {
+  color: var(--bg-badge);
+  background-color: var(--accent-cyan);
+}
+
+/* El hover lo encerramos estrictamente para dispositivos con mouse */
+@media (hover: hover) and (pointer: fine) {
+  .nav-item:hover {
+    color: var(--bg-badge);
+    background-color: var(--accent-cyan);
+  }
 }
 
 /* --- TOOLTIP DESKTOP --- */
@@ -385,6 +414,10 @@ p, span, div { font-family: var(--font-inter); }
     gap: 4px !important;
     justify-content: center !important;
     background: none !important;
+  }
+  .nav-item.active {
+    color: var(--accent-cyan);
+    /* background-color: var(--accent-cyan); */
   }
 
   .mobile-label {

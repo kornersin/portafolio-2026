@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, transform } from 'framer-motion';
 import { Mail, Linkedin, MessageSquare, ArrowUpRight } from 'lucide-react';
 
 const Contact = () => {
