@@ -686,7 +686,7 @@ p, span, div { font-family: var(--font-inter); }
   .detail-info-grid {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding: 60px 24px;
+    padding: 60px 0px;
   }
 }
 @media (max-width: 768px) {
