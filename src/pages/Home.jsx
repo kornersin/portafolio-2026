@@ -81,8 +81,8 @@ const Home = () => {
           </div>
           <div className="nav-container">
             <a 
-              href="/resume.pdf" 
-              download="resume.pdf" 
+              href="/Resume_Carlos_Hernandez.pdf" 
+              // download="Resume_Carlos_Hernandez.pdf" 
               className="btn-primary">
               <span>GET RESUME</span>
             </a>
